@@ -1,7 +1,3 @@
-/**
- * Created by yikun on 16/05/06.
- */
-
 'use strict';
 
 import React from 'react';

@@ -1,5 +1,4 @@
 
-
 'use strict';
 
 import React from 'react';
@@ -17,6 +16,7 @@ class App extends React.Component { //定义组件，继承父类
         this.db = new LocalDb('ReactDemo');
         this.state = { //定义组件状态
             todos: this.db.get('todos') || [],
+            // todos: [],
             isAllChecked: false
         };
     }

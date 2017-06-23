@@ -6,6 +6,7 @@ var webpackDevServer = require("webpack-dev-server");
 var webpackConfig = require("./webpack.config.js");
 const port = 8088;
 
+//可以在定义一个监听js，html的task
 gulp.task('webpack', () => {
   const compiler = webpack(webpackConfig)
   new webpackDevServer(compiler, {
