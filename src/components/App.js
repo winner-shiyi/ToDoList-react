@@ -3,7 +3,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LocalDb from 'localDb';
+import LocalDb from '../vendor/localDb';
 
 import TodoHeader from './TodoHeader.js';
 import TodoMain from './TodoMain.js';
