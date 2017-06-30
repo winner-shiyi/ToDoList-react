@@ -98,5 +98,5 @@ class App extends React.Component { //定义组件，继承父类
 }
 
 //取消eslint 对document没定义的报错
-/*eslint no-undef:0 */
+/* eslint-disable */
 ReactDOM.render(<App/>, document.getElementById('app'))
