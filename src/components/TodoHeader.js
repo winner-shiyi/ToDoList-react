@@ -1,25 +1,24 @@
-'use strict';
+'use strict'
 
-import React from 'react';
+import React from 'react'
 
 
 class TodoHeader extends React.Component {
 
-
     // 绑定键盘回车事件，添加新任务
     handlerKeyUp(e) {
         if(e.keyCode == 13) {
-            let value = e.target.value;
+            let value = e.target.value
 
-            if(!value) return false;
+            if(!value) return false
 
             let newTodoItem = {
                 text: value,
-                isDone: false
-            };
+                isDone: false,
+            }
 
-            e.target.value = '';
-            this.props.addTodo(newTodoItem);   //使用props调用App组件传过来的方法。
+            e.target.value = ''
+            this.props.addTodo(newTodoItem)  //使用props调用App组件传过来的方法。
         }
     }
 
@@ -35,4 +34,4 @@ class TodoHeader extends React.Component {
 }
 
 
-export default TodoHeader;
+export default TodoHeader

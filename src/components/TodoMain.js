@@ -1,6 +1,6 @@
 
-'use strict';
-import React from 'react';
+'use strict'
+import React from 'react'
 import TodoItem from './TodoItem.js'
 
 class TodoMain extends React.Component {
@@ -27,4 +27,4 @@ class TodoMain extends React.Component {
 }
 
 
-export default TodoMain;
+export default TodoMain

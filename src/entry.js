@@ -1,2 +1,2 @@
 // 引入组件
-require('./components/App');
+require('./components/App')
