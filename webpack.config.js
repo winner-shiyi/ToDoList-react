@@ -34,6 +34,7 @@ module.exports = {
         // 现在你import文件的时候可以直接使用import Func from './file'，不用再使用import Func from './file.js'
         extensions: ['.js', '.jsx', '.json'],
     },
+    
     // plugins:[
     //     new webpack.LoaderOptionsPlugin({
     //         test: /\.js?$/,
