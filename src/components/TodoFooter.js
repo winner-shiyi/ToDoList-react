@@ -8,7 +8,7 @@ class TodoFooter extends React.Component {
 
     //改变任务是否已完成的状态
     handlerSelectAll(e) {
-        this.props.changeTodoState(null, e.target.checked, true)    // true表示全部操作。
+        this.props.changeTodoState(null, e.target.checked, true)
 
     }
 

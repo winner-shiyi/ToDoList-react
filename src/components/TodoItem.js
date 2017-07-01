@@ -15,6 +15,7 @@ class TodoItem extends React.Component {
 
     // 鼠标移入事件
     handlerMouseOver() {
+        //获取真实DOM
         ReactDOM.findDOMNode(this).style.background = '#eee'
         ReactDOM.findDOMNode(this.refs.delButton).style.display = 'inline-block'
     }
@@ -29,11 +30,10 @@ class TodoItem extends React.Component {
         this.props.deleteTodo(this.props.index)
     }
 
-
     render() {
         let className = this.props.isDone ? 'task-done' : ''
         return (
-            <li onMouseOver={this.handlerMouseOver.bind(this)} onMouseOut={this.handlerMouseOut.bind(this)} key={this.props.index}>
+            <li onMouseOver={this.handlerMouseOver.bind(this)} onMouseOut={this.handlerMouseOut.bind(this)}>
                 <label>
                     <input type="checkbox" checked={this.props.isDone} onChange={this.handlerChange.bind(this)} />
                     <span className={className}>{this.props.text}</span>

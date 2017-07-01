@@ -6,7 +6,7 @@ import TodoItem from './TodoItem.js'
 class TodoMain extends React.Component {
 
     render() {
-        if(this.props.todos.length == 0) {
+        if(this.props.todos.length === 0) {
             return (
                 <div className="todo-empty">恭喜您，目前没有待办任务！</div>
             )
@@ -15,7 +15,7 @@ class TodoMain extends React.Component {
                 <ul className="todo-main">
                     {
                         this.props.todos.map((todo, index) => {
-                            //{...this.props} 用来传递TodoMain的todos属性和delete、change方法。
+                            //{...this.props} 用来传递TodoMain组件从App组件拿到的todos属性和delete、change方法。
                             return <TodoItem text={todo.text} isDone={todo.isDone} index={index} key={index} {...this.props}/>
                         })
                     }

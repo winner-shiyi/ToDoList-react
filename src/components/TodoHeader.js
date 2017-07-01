@@ -7,7 +7,7 @@ class TodoHeader extends React.Component {
 
     // 绑定键盘回车事件，添加新任务
     handlerKeyUp(e) {
-        if(e.keyCode == 13) {
+        if(e.keyCode === 13) {
             let value = e.target.value
 
             if(!value) return false

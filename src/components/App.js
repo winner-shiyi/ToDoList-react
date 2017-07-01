@@ -10,13 +10,12 @@ import TodoMain from './TodoMain.js'
 import TodoFooter from './TodoFooter.js'
 
 //es6写法
-class App extends React.Component { //定义组件，继承父类
-    constructor() { //定义App类的构造函数
-        super() //调用父类的构造函数
+class App extends React.Component { 
+    constructor(...args) { 
+        super(...args)
         this.db = new LocalDb('ReactDemo')
-        this.state = { //定义组件状态
+        this.state = { 
             todos: this.db.get('todos') || [],
-            // todos: [],
             isAllChecked: false,
         }
     }
@@ -30,6 +29,7 @@ class App extends React.Component { //定义组件，继承父类
         // if (arr.forEach(function(todo) {return todo.isDone;} )) {
         //     isAllChecked = true;
         // }
+        
         this.setState({   //改变状态，组件重绘
             todos: this.state.todos,
             isAllChecked: isAllChecked,
@@ -38,7 +38,7 @@ class App extends React.Component { //定义组件，继承父类
 
     // 添加任务，是传递给Header组件的方法
     addTodo(todoItem){
-        this.state.todos.push(todoItem)  //todo列表
+        this.state.todos.push(todoItem) 
         this.db.set('todos', this.state.todos)
         this.allChecked()
     }
@@ -46,7 +46,7 @@ class App extends React.Component { //定义组件，继承父类
     // 删除当前的任务，传递给TodoItem的方法
     deleteTodo(index){
         this.state.todos.splice(index, 1)
-        this.setState({todos: this.state.todos})  //改变状态
+        this.setState({todos: this.state.todos})
         this.db.set('todos', this.state.todos)
     }
 
@@ -64,8 +64,8 @@ class App extends React.Component { //定义组件，继承父类
     }
 
     // 改变任务状态，传递给TodoItem和Footer组件的方法
-    changeTodoState(index, isDone, isChangeAll=false){   //初始化isChangeAll为false
-        if(isChangeAll){     //全部操作
+    changeTodoState(index, isDone, isChangeAll=false){   //初始化isChangeAll为false，区分全部改变和单个改变
+        if(isChangeAll){     //操作全部todo
             this.setState({
                 todos: this.state.todos.map((todo) => {
                     todo.isDone = isDone
@@ -73,7 +73,7 @@ class App extends React.Component { //定义组件，继承父类
                 }),
                 isAllChecked: isDone,
             })
-        }else{   //操作其中一个todo
+        }else{   //操作具体其中某一个todo
             this.state.todos[index].isDone = isDone
             this.allChecked()
         }
@@ -100,3 +100,5 @@ class App extends React.Component { //定义组件，继承父类
 //取消eslint 对document没定义的报错
 /* eslint-disable */
 ReactDOM.render(<App/>, document.getElementById('app'))
+
+export default App
