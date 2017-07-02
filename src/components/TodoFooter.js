@@ -14,6 +14,7 @@ class TodoFooter extends React.Component {
 
     //删除全部已完成的任务
     handlerDeleteDone() {
+        alert(1)
         this.props.clearDone()
     }
 

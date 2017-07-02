@@ -24,6 +24,10 @@
             "error",
             4
         ],
+        "linebreak-style": [//换行风格
+            0,
+            "windows"
+        ],
         "quotes": [
             0,
             "double"

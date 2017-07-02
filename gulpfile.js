@@ -13,8 +13,7 @@ gulp.task('webpack', () => {
     new webpackDevServer(compiler, {
         contentBase:'./',
         historyApiFallback:true,
-        hot:true,
-        noInfo:false,
+        inline:true,
     }).listen(port, function(err){
         open(`http://127.0.0.1:${port}`)
     })
@@ -25,8 +24,10 @@ gulp.task('sass', function(){
         .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['last 2 versions', 'Android >= 4.0'],
-            cascade: true, 
-            remove:true,
+            cascade: true, //是否美化属性值 
+            // -webkit-transform: rotate(45deg);
+            //        transform: rotate(45deg);
+            remove:true, //是否去掉不必要的前缀 
         }))
         .pipe(gulp.dest('dist/styles'))
 })
