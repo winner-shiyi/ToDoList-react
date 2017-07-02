@@ -26,9 +26,6 @@ class App extends React.Component {
         if (this.state.todos.every(todo => todo.isDone)) {
             isAllChecked = true
         }
-        // if (arr.forEach(function(todo) {return todo.isDone;} )) {
-        //     isAllChecked = true;
-        // }
         
         this.setState({   //改变状态，组件重绘
             todos: this.state.todos,
@@ -53,9 +50,6 @@ class App extends React.Component {
     // 清除已完成的任务，传递给Footer组件的方法
     clearDone(){
         let todos = this.state.todos.filter(todo => !todo.isDone)   //过滤掉数组中todo.isDone为true的item。
-        // var todos = arr.filter(function(todo) {
-        //     return !todo.isDone;
-        // });
         this.setState({
             todos: todos,
             isAllChecked: false,
